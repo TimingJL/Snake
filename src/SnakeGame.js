@@ -58,7 +58,7 @@ const defaultSnake = {
 
 const SnakeGame = () => {
   const [snake, setSnake] = useState(defaultSnake);
-  const [food, setFood] = useState(createFood());
+  const [food, setFood] = useState(() => createFood());
   const [isGameStart, setIsGameStart] = useState(false);
   const [isPause, setIsPause] = useState(false);
   const [score, setScore] = useState(0);
