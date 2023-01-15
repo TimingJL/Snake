@@ -56,8 +56,6 @@ const defaultSnake = {
   speed: SNAKE_INITIAL_SPEED,
 };
 
-let gameIntervalId = 0;
-
 const SnakeGame = () => {
   const [snake, setSnake] = useState(defaultSnake);
   const [food, setFood] = useState(createFood());
@@ -121,7 +119,7 @@ const SnakeGame = () => {
   }, [snake]);
 
   useEffect(() => {
-    gameIntervalId = setInterval(() => {
+    const gameIntervalId = setInterval(() => {
       if (!isGameStart || isPause) {
         return;
       }
